@@ -12,11 +12,11 @@ namespace BankAccountProject
         // Method
 
         // Abstract method of deposit shared by all accounts 
-        public abstract void Deposit(int amount);
+        public abstract void Deposit(double amount);
      
 
         // Abstract method of withdraw shared by all accounts 
-        public abstract void Withdraw(int amount);
+        public abstract void Withdraw(double amount);
 
 
         // Abstract method of view info shared by all accounts 

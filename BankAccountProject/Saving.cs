@@ -11,22 +11,22 @@ namespace BankAccountProject
         int amount;
 
         // Field 
-        private int balance = 600900;
+        private double balance = 600900d;
 
 
 
         // Properties
 
-        public int Balance { get; set; }
-         
+        public double Balance { get; set; }
 
-        
+
+
         // Constructor
         public Saving()
         {
             // Default
         }
-        public Saving (int balance)
+        public Saving(double balance)
         {
             this.balance = balance;
         }
@@ -34,19 +34,27 @@ namespace BankAccountProject
 
 
         // Method 
-        public override void Deposit(int amount)
+        public override void Deposit(double amount)
         {
             balance += amount;
         }
 
-        public override void Withdraw(int amount)
+        public override void Withdraw(double amount)
         {
             balance -= amount;
         }
 
+        //public void InsufficientFunds()
+        //{
+        //    if (amount > minBalance)
+        //    {
+        //        Console.WriteLine("Insufficient Funds in the account.");
+        //    }
+        //}
+
         public override void ViewInfo()
         {
-            Console.WriteLine("You have {0} in your saving account", balance );
+            Console.WriteLine("You have {0} in your saving account", balance);
         }
     }
 }

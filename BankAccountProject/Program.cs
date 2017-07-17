@@ -14,10 +14,9 @@ namespace BankAccountProject
             Checking checking1 = new Checking();
             Saving saving1 = new Saving();
 
-            int amount;
+            double amount;
             int menuChoice = 0;
             int moreChoice = 0;
-
 
             while (menuChoice < 1 || menuChoice > 5)
             {
@@ -31,7 +30,7 @@ namespace BankAccountProject
                     Console.WriteLine("3.Deposit Funds");
                     Console.WriteLine("4.Withdraw Funds");
                     Console.WriteLine("5.Exit");
-                    
+
 
                     menuChoice = int.Parse(Console.ReadLine());
 
@@ -55,20 +54,20 @@ namespace BankAccountProject
                         if (moreChoice == 1)
                         {
                             checking1.ViewInfo();
-                            continue;
+                            break;
                         }
 
                         else if (moreChoice == 2)
                         {
                             saving1.ViewInfo();
-                            continue;
+                            break;
                         }
 
                     }
                     else if (menuChoice == 3)
                     {
                         Console.WriteLine("How much would you like to deposit?");
-                        amount = int.Parse(Console.ReadLine());
+                        amount = double.Parse(Console.ReadLine());
 
                         while (moreChoice < 1 || moreChoice > 2)
                         {
@@ -81,12 +80,14 @@ namespace BankAccountProject
                             {
                                 checking1.Deposit(amount);
                                 checking1.ViewInfo();
+                                break;
 
                             }
                             else if (moreChoice == 2)
                             {
                                 saving1.Deposit(amount);
                                 saving1.ViewInfo();
+                                break;
                             }
                         }
 
@@ -94,39 +95,49 @@ namespace BankAccountProject
                     else if (menuChoice == 4)
                     {
                         Console.WriteLine("How much would you like to withdraw?");
-                        amount = int.Parse(Console.ReadLine());
+                        amount = double.Parse(Console.ReadLine());
 
                         while (moreChoice < 1 || moreChoice > 2)
                         {
-                            Console.WriteLine("Where would you like to deposit?");
+                            Console.WriteLine("Where would you like to withdraw?");
                             Console.WriteLine("1.Checking Account");
                             Console.WriteLine("2.Saving Account");
+                            moreChoice = int.Parse(Console.ReadLine());
+
 
                             if (moreChoice == 1)
                             {
                                 checking1.Withdraw(amount);
                                 checking1.ViewInfo();
+                                break;
 
                             }
                             else if (moreChoice == 2)
                             {
+                                // saving1.InsufficientFunds(); <-- could not understand how to incorperate a min value without funds to go under
                                 saving1.Withdraw(amount);
                                 saving1.ViewInfo();
+                                break;
+                                
+
                             }
                         }
 
                     }
                     else if (menuChoice == 5)
                     {
-                        Environment.Exit(0);
+                        Console.WriteLine("Thank you for banking with SHAM WOW.");
+
+                        Environment.Exit(0);  
                         return;
                     }
+
                     else
                     {
-                        Console.WriteLine("Thank you for banking with SHAM WOW.");
-                        
+                        Console.WriteLine("Invalid. \nPlease pick another option");
+
                     }
-                    
+
                 }
             }
 
@@ -134,7 +145,7 @@ namespace BankAccountProject
 
 
 
-            
+
 
 
 

@@ -5,16 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BankAccountProject
+
 {
     class Checking : MainAccount
     {
-       
+
         // Field 
-        private int balance = 10000;
+        private double balance = 10000d;
 
 
         // Properties
-        public int Balance { get; set; }
+        public double Balance { get; }
 
 
         // Constructor
@@ -22,7 +23,7 @@ namespace BankAccountProject
         {
             // Default
         }
-        public Checking(int balance)
+        public Checking(double balance)
         {
             this.balance = balance;
 
@@ -31,15 +32,15 @@ namespace BankAccountProject
 
 
         // Method
-        public override void Deposit(int amount)
+        public override void Deposit(double amount)
         {
             balance += amount;
         }
 
-        public override void Withdraw(int amount)
+        public override void Withdraw(double amount)
         {
             balance -= amount;
-           
+
         }
         public override void ViewInfo()
         {
@@ -47,7 +48,7 @@ namespace BankAccountProject
         }
 
 
-        
+
     }
-   
+
 }

@@ -10,7 +10,7 @@ namespace BankAccountProject
     {
         // Fields 
         private string userName = "Marty McFly";
-        protected string userSocial = "XXX-XX-XXX";
+        protected string userSocial = "XXX-XX-8569";
         private int userAccountNumber = 12121212;
         
 
